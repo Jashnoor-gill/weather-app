@@ -66,36 +66,46 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ data }) => {
 
         {/* Weather Details */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+          <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-blue-200 dark:border-blue-700">
             <div className="flex items-center gap-3">
-              <Droplets className="text-blue-500" size={20} />
-              <span className="text-gray-700 dark:text-gray-300">Humidity</span>
+              <Droplets className="text-blue-500 dark:text-blue-300" size={24} />
+              <span className="text-gray-700 dark:text-gray-200 font-medium">Humidity</span>
             </div>
-            <span className="font-semibold text-gray-800 dark:text-white">
+            <span className="font-bold text-blue-600 dark:text-blue-300 text-lg">
               {data.main.humidity}%
             </span>
           </div>
 
-          <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+          <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-200 dark:border-green-700">
             <div className="flex items-center gap-3">
-              <Wind className="text-green-500" size={20} />
-              <span className="text-gray-700 dark:text-gray-300">Wind Speed</span>
+              <Wind className="text-green-500 dark:text-green-300" size={24} />
+              <span className="text-gray-700 dark:text-gray-200 font-medium">Wind Speed</span>
             </div>
-            <span className="font-semibold text-gray-800 dark:text-white">
+            <span className="font-bold text-green-600 dark:text-green-300 text-lg">
               {data.wind.speed} m/s
             </span>
           </div>
 
-          <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
-            <span className="text-gray-700 dark:text-gray-300">Pressure</span>
-            <span className="font-semibold text-gray-800 dark:text-white">
+          <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-purple-200 dark:border-purple-700">
+            <div className="flex items-center gap-3">
+              <svg className="text-purple-500 dark:text-purple-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2v20M2 12h20M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z"/>
+              </svg>
+              <span className="text-gray-700 dark:text-gray-200 font-medium">Pressure</span>
+            </div>
+            <span className="font-bold text-purple-600 dark:text-purple-300 text-lg">
               {data.main.pressure} hPa
             </span>
           </div>
 
-          <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
-            <span className="text-gray-700 dark:text-gray-300">Visibility</span>
-            <span className="font-semibold text-gray-800 dark:text-white">
+          <div className="flex items-center justify-between p-4 bg-gradient-to-r from-amber-50 to-amber-100 dark:from-amber-900 dark:to-amber-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-amber-200 dark:border-amber-700">
+            <div className="flex items-center gap-3">
+              <svg className="text-amber-500 dark:text-amber-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2v20M2 12h20"/>
+              </svg>
+              <span className="text-gray-700 dark:text-gray-200 font-medium">Visibility</span>
+            </div>
+            <span className="font-bold text-amber-600 dark:text-amber-300 text-lg">
               {(data.visibility / 1000).toFixed(1)} km
             </span>
           </div>
